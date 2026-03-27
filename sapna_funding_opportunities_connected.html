@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAPNA Funding Opportunities</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#17233f;--blue:#2563eb;--accent:#7c3aed;--sky:#dbeafe;--lav:#ede9fe;
+  --bg:#f8fafc;--white:#fff;--text:#1f2937;--muted:#64748b;--border:#e2e8f0;
+  --shadow:0 10px 30px rgba(23,35,63,.08);--shadow-lg:0 18px 44px rgba(37,99,235,.15);--radius:22px;--max:1180px
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Outfit',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{max-width:var(--max);margin:0 auto;padding:0 24px}
+.site-header{background:
+  radial-gradient(ellipse 56% 60% at 85% 22%, rgba(124,58,237,.20), transparent 70%),
+  radial-gradient(ellipse 48% 52% at 10% 85%, rgba(37,99,235,.17), transparent 70%),
+  linear-gradient(180deg,#fff,#f6f8ff 65%,#f8fafc 100%);
+  border-bottom:1px solid rgba(226,232,240,.85)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:72px}
+.brand{display:flex;align-items:center;gap:14px}
+.brand-mark{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--blue),var(--accent));color:#fff;display:grid;place-items:center;font-weight:700;box-shadow:var(--shadow)}
+.brand-text strong{display:block;font-size:15px;color:var(--navy)} .brand-text span{display:block;font-size:12px;color:var(--muted)}
+.hero{padding:56px 0 28px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:16px}
+.eyebrow:before{content:"";width:34px;height:2px;background:currentColor;border-radius:2px}
+h1{font-family:'Playfair Display',serif;font-size:clamp(34px,5vw,58px);line-height:1.08;color:var(--navy);letter-spacing:-.03em;margin-bottom:14px}
+h1 em{font-style:normal;color:var(--accent)}
+.lead{max-width:760px;color:var(--muted);font-size:18px}
+main{padding:34px 0 70px}
+.controls{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:0 0 22px}
+.search{flex:1;min-width:230px;padding:12px 14px;border:1px solid var(--border);border-radius:999px;background:#fff;font-size:14px}
+.select{padding:12px 14px;border:1px solid var(--border);border-radius:999px;background:#fff;font-size:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;border-radius:999px;font-weight:600;border:1px solid transparent;cursor:pointer;background:#fff}
+.btn-primary{background:linear-gradient(135deg,var(--blue),var(--accent));color:#fff}
+.btn-secondary{border-color:var(--border);color:var(--navy)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px)}
+.meta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.badge{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.badge.type{background:var(--sky);color:var(--blue)}
+.card h3{font-size:22px;color:var(--navy);line-height:1.25;margin-bottom:8px}
+.card p{color:var(--muted);margin-bottom:10px}
+.link-list{display:grid;gap:8px;margin-top:10px}
+.link-pill{display:inline-flex;align-items:center;gap:8px;background:#f8fbff;border:1px solid var(--border);padding:9px 12px;border-radius:14px;color:var(--blue);word-break:break-all}
+.note{background:#eff6ff;border:1px solid #bfdbfe;color:#1d4ed8;border-radius:18px;padding:16px 18px;margin:0 0 24px}
+.admin{margin-top:34px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.admin h2{font-family:'Playfair Display',serif;font-size:28px;color:var(--navy);margin-bottom:10px}
+.admin p{color:var(--muted);margin-bottom:14px}
+textarea{width:100%;min-height:280px;border:1px solid var(--border);border-radius:16px;padding:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;line-height:1.5;background:#fcfdff}
+small{display:block;color:var(--muted);margin-top:10px}
+.footer{padding:28px 0 42px;color:var(--muted);font-size:14px}
+.footer-inner{border-top:1px solid var(--border);padding-top:20px}
+.empty{padding:18px 0;color:var(--muted)}
+@media (max-width:900px){.grid{grid-template-columns:1fr}}
+@media (max-width:640px){.container{padding:0 18px} .hero{padding-top:42px}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="#">
+      <div class="brand-mark">S</div>
+      <div class="brand-text"><strong>SAPNA</strong><span>South Asian Professional Neuroscience Association</span></div>
+    </a>
+  </div>
+  <div class="container hero">
+    <div class="eyebrow">Funding Opportunities</div>
+    <h1>Track <em>funding opportunities</em> relevant to the SAPNA community.</h1>
+    <p class="lead">This page can auto-load entries from a published Google Sheet, while also remaining easy to edit manually in the HTML file or through the built-in JSON editor below.</p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="note">
+      <strong>How auto-update works:</strong> publish your Google Sheet as CSV and paste the CSV link into <code>SHEET_CSV_URL</code> in this HTML. The page will pull new rows automatically. If you leave that blank, it uses the built-in manual list instead.
+    </div>
+
+    <div class="controls">
+      <input id="searchInput" class="search" placeholder="Search agency, notes, or link..." />
+      <select id="categoryFilter" class="select">
+        <option value="All">All categories</option>
+        <option value="Funding">Funding</option>
+        <option value="Search tools">Search tools</option>
+        <option value="International">International</option>
+      </select>
+      <button class="btn btn-secondary" onclick="loadData()">Reload data</button>
+    </div>
+
+    <div id="cards" class="grid"></div>
+    <div id="empty" class="empty" style="display:none;">No opportunities match your search.</div>
+
+    <section class="admin">
+      <h2>Manual editing panel</h2>
+      <p>You can edit the list below as JSON, then click <strong>Apply manual edits</strong>. This is useful if you want to make quick changes without changing the card layout code.</p>
+      <textarea id="jsonEditor"></textarea>
+      <div class="controls" style="margin-top:14px;">
+        <button class="btn btn-primary" onclick="applyManualEdits()">Apply manual edits</button>
+        <button class="btn btn-secondary" onclick="downloadJSON()">Download JSON backup</button>
+        <button class="btn btn-secondary" onclick="resetEditor()">Reset editor</button>
+      </div>
+      <small>Each item should look like: { "agency": "Wellcome", "links": "https://wellcome.org/", "notes": "General funding source", "category": "Funding" }</small>
+    </section>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">SAPNA Funding Opportunities • auto-updating via Google Sheet CSV or manual JSON editing</div>
+</footer>
+
+<script>
+// 1) AUTO-UPDATE OPTION:
+// Publish your Google Sheet as CSV and paste the URL below.
+// Example format:
+// https://docs.google.com/spreadsheets/d/FILE_ID/pub?gid=0&single=true&output=csv
+const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSA8jlHRaRfp1kZveJGS-EHX1muWXUM7Bu7FB5HEqNYhdNCN2DrHtM_g4jPsD0zybiZpO0tURW_ibn5/pub?gid=0&single=true&output=csv";
+
+// 2) MANUAL FALLBACK DATA:
+let manualData = [
+  { agency: 'Wellcome', links: 'https://wellcome.org/', notes: 'General funding source', category: 'Funding' },
+  { agency: 'Horizon Europe', links: 'https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en', notes: 'European funding opportunities', category: 'Funding' },
+  { agency: 'CDMRP', links: 'https://cdmrp.health.mil/', notes: 'DoD Congressionally Directed Medical Research Programs', category: 'Funding' },
+  { agency: 'NIH (autism)', links: 'https://www.nih.gov/news-events/news-releases/nih-launches-fifty-million-autism-data-science-initiative-unlock-causes-improve-outcomes', notes: 'Autism data science initiative', category: 'Funding' },
+  { agency: 'Simons', links: 'https://www.sfari.org/; https://www.simonsfoundation.org/grant/pivot-fellowship/', notes: 'SFARI and Simons opportunities', category: 'Funding' },
+  { agency: 'PCORI', links: 'https://www.pcori.org/funding-opportunities', notes: 'Patient-Centered Outcomes Research Institute', category: 'Funding' },
+  { agency: 'RERC', links: 'https://acl.gov/programs/research-and-development/rehabilitation-engineering-research', notes: 'Rehabilitation Engineering Research Centers', category: 'Funding' },
+  { agency: 'CIFAR (for early career)', links: 'https://cifar.ca/next-generation/global-scholars/', notes: 'Global Scholars program', category: 'Funding' },
+  { agency: 'MQ (for early career)', links: 'https://www.mqmentalhealth.org/our-work/research-programmes/fellows-award/', notes: 'Fellows Award', category: 'Funding' },
+  { agency: 'ACL', links: 'https://acl.gov/news-and-events/announcements/new-funding-opportunities-field-initiated-projects-program', notes: 'Field-initiated projects', category: 'Funding' },
+  { agency: 'Dana', links: 'https://dana.org/neuroscience-and-society/', notes: 'Dana Foundation', category: 'Funding' },
+  { agency: 'BBRF', links: 'https://bbrfoundation.org/', notes: 'Brain & Behavior Research Foundation', category: 'Funding' },
+  { agency: 'NSF', links: 'https://www.nsf.gov/funding/opportunities/nsf-ttp-national-science-foundation-translation-practice', notes: 'Translation to Practice', category: 'Funding' },
+  { agency: 'Eagles', links: 'https://www.eaglescharitablefoundation.org/', notes: 'Eagles Charitable Foundation', category: 'Funding' },
+  { agency: 'Hearing Health Foundation', links: 'https://hearinghealthfoundation.org/', notes: 'Hearing-related funding', category: 'Funding' },
+  { agency: 'ARPA-H', links: 'https://arpa-h.gov/about/our-research', notes: 'Advanced Research Projects Agency for Health', category: 'Funding' },
+  { agency: 'ARIA', links: 'https://ariaroadmap.org/', notes: 'Advanced Research + Invention Agency', category: 'Funding' },
+  { agency: 'NIDILRR', links: 'https://acl.gov/grants/closed-funding-opportunities-fy-2025', notes: 'Disability, Independent Living, and Rehabilitation Research', category: 'Funding' },
+  { agency: 'AHA', links: 'https://professional.heart.org/en/research-programs/aha-funding-opportunities', notes: 'Supports stroke neuroscience projects', category: 'Funding' },
+  { agency: 'Bridge2AI', links: 'https://commonfund.nih.gov/bridge2ai', notes: 'NIH Common Fund program', category: 'Funding' },
+  { agency: 'Atom Grants', links: 'https://atomgrants.com/', notes: 'Grant search tool', category: 'Search tools' },
+  { agency: 'Pivot funding search tool', links: 'https://research.mit.edu/research-development/pivot-comprehensive-funding-search-tool', notes: 'Grant search tool', category: 'Search tools' },
+  { agency: 'Duke Research Funding', links: 'https://researchfunding.duke.edu/', notes: 'Grant search tool', category: 'Search tools' },
+  { agency: 'Canada Excellence Research Chairs', links: 'https://www.cerc.gc.ca/home-accueil-eng.aspx', notes: 'International opportunity', category: 'International' },
+  { agency: 'Choose Europe', links: 'https://commission.europa.eu/topics/research-and-innovation/choose-europe_en', notes: 'International opportunity', category: 'International' }
+];
+
+let currentData = [];
+
+function parseLinks(raw) {
+  return (raw || "")
+    .split(";")
+    .map(x => x.trim())
+    .filter(Boolean);
+}
+
+function renderCards(items) {
+  const cards = document.getElementById("cards");
+  const empty = document.getElementById("empty");
+  cards.innerHTML = "";
+
+  if (!items.length) {
+    empty.style.display = "block";
+    return;
+  }
+  empty.style.display = "none";
+
+  items.forEach(item => {
+    const links = parseLinks(item.links);
+    const card = document.createElement("article");
+    card.className = "card";
+    card.innerHTML = `
+      <div class="meta">
+        <span class="badge type">${item.category || "Funding"}</span>
+      </div>
+      <h3>${escapeHtml(item.agency || "")}</h3>
+      <p>${escapeHtml(item.notes || "")}</p>
+      <div class="link-list">
+        ${links.map(link => `<a class="link-pill" href="${link}" target="_blank" rel="noopener noreferrer">${escapeHtml(link)}</a>`).join("")}
+      </div>
+    `;
+    cards.appendChild(card);
+  });
+}
+
+function escapeHtml(str) {
+  return String(str)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
+function simpleCSVParse(text) {
+  const rows = [];
+  let row = [];
+  let cell = "";
+  let inQuotes = false;
+
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i];
+    const next = text[i + 1];
+
+    if (ch === '"') {
+      if (inQuotes && next === '"') {
+        cell += '"';
+        i++;
+      } else {
+        inQuotes = !inQuotes;
+      }
+    } else if (ch === ',' && !inQuotes) {
+      row.push(cell);
+      cell = "";
+    } else if ((ch === '\n' || ch === '\r') && !inQuotes) {
+      if (ch === '\r' && next === '\n') i++;
+      row.push(cell);
+      if (row.some(x => x !== "")) rows.push(row);
+      row = [];
+      cell = "";
+    } else {
+      cell += ch;
+    }
+  }
+  if (cell.length || row.length) {
+    row.push(cell);
+    rows.push(row);
+  }
+  return rows;
+}
+
+async function loadFromSheet() {
+  const res = await fetch(SHEET_CSV_URL);
+  const text = await res.text();
+  const rows = simpleCSVParse(text);
+  const headers = rows[0].map(h => h.trim());
+  return rows.slice(1).filter(r => r.some(Boolean)).map(r => {
+    const obj = {};
+    headers.forEach((h, idx) => obj[h] = (r[idx] || "").trim());
+    const agency = obj["Agency"] || obj["agency"] || "";
+    const links = obj["Opportunity Details"] || obj["links"] || "";
+    let category = "Funding";
+    if (/search/i.test(agency) || /search/i.test(links)) category = "Search tools";
+    if (/international/i.test(agency) || /cerc|choose europe/i.test(links)) category = "International";
+    return {
+      agency,
+      links,
+      notes: obj["Notes"] || obj["notes"] || "",
+      category
+    };
+  });
+}
+
+function syncEditor() {
+  document.getElementById("jsonEditor").value = JSON.stringify(manualData, null, 2);
+}
+
+function applyFilters() {
+  const q = document.getElementById("searchInput").value.trim().toLowerCase();
+  const cat = document.getElementById("categoryFilter").value;
+  const filtered = currentData.filter(item => {
+    const hay = [item.agency, item.links, item.notes, item.category].join(" ").toLowerCase();
+    const matchQ = !q || hay.includes(q);
+    const matchCat = cat === "All" || (item.category || "Funding") === cat;
+    return matchQ && matchCat;
+  });
+  renderCards(filtered);
+}
+
+async function loadData() {
+  try {
+    if (SHEET_CSV_URL.trim()) {
+      currentData = await loadFromSheet();
+    } else {
+      currentData = [...manualData];
+    }
+  } catch (e) {
+    console.error(e);
+    currentData = [...manualData];
+  }
+  applyFilters();
+}
+
+function applyManualEdits() {
+  try {
+    const parsed = JSON.parse(document.getElementById("jsonEditor").value);
+    if (!Array.isArray(parsed)) throw new Error("JSON must be an array");
+    manualData = parsed;
+    if (!SHEET_CSV_URL.trim()) {
+      currentData = [...manualData];
+      applyFilters();
+    }
+    alert("Manual edits applied.");
+  } catch (e) {
+    alert("Could not apply edits: " + e.message);
+  }
+}
+
+function downloadJSON() {
+  const blob = new Blob([JSON.stringify(manualData, null, 2)], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "sapna_funding_opportunities.json";
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+function resetEditor() {
+  syncEditor();
+}
+
+document.getElementById("searchInput").addEventListener("input", applyFilters);
+document.getElementById("categoryFilter").addEventListener("change", applyFilters);
+
+syncEditor();
+loadData();
+</script>
+</body>
+</html>
