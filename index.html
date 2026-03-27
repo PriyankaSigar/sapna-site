@@ -328,6 +328,26 @@ h1.site-title em {
 .empty-state h3 { font-size: 18px; margin-bottom: 8px; color: var(--text); }
 .empty-state p { font-size: 14px; }
 
+
+[contenteditable="true"] {
+  outline: none;
+  transition: box-shadow .2s, background-color .2s;
+  border-radius: 6px;
+}
+
+[contenteditable="true"]:hover {
+  background: rgba(37, 99, 235, 0.05);
+}
+
+[contenteditable="true"]:focus {
+  background: rgba(37, 99, 235, 0.08);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.18);
+}
+
+.editable-email {
+  cursor: text;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   .header-inner { padding: 40px 20px 36px; }
@@ -347,9 +367,9 @@ h1.site-title em {
 <!-- HEADER -->
 <header class="site-header">
   <div class="header-inner">
-    <div class="header-kicker">Community Directory</div>
-    <h1 class="site-title">South Asian<br><em>Neuroscience Network</em></h1>
-    <p class="site-subtitle">A global community of neuroscientists, researchers, and clinicians of South Asian heritage — spanning academia, medicine, and industry.</p>
+    <div class="header-kicker" contenteditable="true">Community Directory</div>
+    <h1 class="site-title" contenteditable="true">South Asian<br><em>Neuroscience Network</em></h1>
+    <p class="site-subtitle" contenteditable="true">A global community of neuroscientists, researchers, and clinicians of South Asian heritage — spanning academia, medicine, and industry.</p>
     <div class="header-stats">
       <div class="stat-item"><div class="stat-num" id="stat-total">0</div><div class="stat-desc">Members</div></div>
       <div class="stat-item"><div class="stat-num" id="stat-inst">0</div><div class="stat-desc">Institutions</div></div>
@@ -612,12 +632,16 @@ function renderAll() {
         : `<span class="no-email">—</span>`;
       card.innerHTML = `
         <div class="avatar-wrap">
-          <div class="avatar-initials">${ini}</div>
+          <div class="avatar-initials" contenteditable="true">${ini}</div>
         </div>
-        <div class="member-name">${m.name}</div>
-        <div class="member-title">${m.title}</div>
-        <div class="member-inst">${m.inst}</div>
-        <div class="card-footer">${emailHtml}</div>`;
+        <div class="member-name" contenteditable="true">${m.name}</div>
+        <div class="member-title" contenteditable="true">${m.title}</div>
+        <div class="member-inst" contenteditable="true">${m.inst}</div>
+        <div class="card-footer">
+          <a class="email-btn editable-email" href="mailto:${m.email || ''}" title="${m.email || ''}" contenteditable="true">
+            ${m.email || 'No email'}
+          </a>
+        </div>`;
       grid.appendChild(card);
     });
     main.appendChild(grid);
@@ -638,6 +662,15 @@ function searchCards(val) {
   currentSearch = val;
   renderAll();
 }
+
+
+document.addEventListener('input', (e) => {
+  if (e.target.classList.contains('editable-email')) {
+    const email = e.target.textContent.trim();
+    e.target.href = email && email !== 'No email' ? `mailto:${email}` : '#';
+    e.target.title = email;
+  }
+});
 
 // Stats
 function computeStats() {
